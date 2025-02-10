@@ -152,6 +152,7 @@ console.log(lordify2("Don2", "Piscataway2"));
 console.log(lordify2("Todd2", "Schenectady2"));
 */
 
+/*
 const lordify = (firstName, land) => {
   if (!firstName) {
     throw new Error("A firstName is required to lordify");
@@ -165,3 +166,82 @@ const lordify = (firstName, land) => {
 console.log(lordify("Kelly", "Sonoma"));
 
 console.log(lordify("Dave"));
+*/
+
+/*
+const person = (firstName, lastName) => ({
+  first: firstName,
+  last: lastName,
+});
+console.log(person("Brad", "Janson"));
+*/
+
+/*
+const tahoe = {
+  mountrains: ["Freel", "Rose", "Tallac", "Rubicon", "Silver"],
+  print: function (delay = 1000) {
+    setTimeout(() => {
+      console.log(this.mountrains.join(", "));
+    }, delay);
+  },
+};
+tahoe.print();
+console.log(this);
+*/
+
+/*
+const add = (x = 5, y = 10) => console.log(x + y);
+*/
+
+/*
+const sandwich = {
+  bread: "dutch crunch",
+  meat: "tuna",
+  cheese: "swiss",
+  toppings: ["lettuce", "tomato", "mustard"],
+};
+
+const { bread, meat } = sandwich;
+console.log(bread, meat);
+*/
+
+/*
+const sandwich = {
+  bread: "dutch crunch",
+  meat: "tuna",
+  cheese: "swiss",
+  toppings: ["lettuce", "tomato", "mustard"],
+};
+
+let { bread, meat } = sandwich;
+
+bread = "garlic";
+meat = "turky";
+
+console.log(sandwich);
+console.log(bread);
+console.log(meat);
+*/
+
+/*
+const lordify = (regularPerson) => {
+  console.log(`${regularPerson.firstname} of Canterbury`);
+};
+
+const regularPerson = {
+  firstname: "Bill",
+  lastname: "Wilson",
+};
+lordify(regularPerson);
+*/
+
+const lordify = ({ firstname }) => {
+  console.log(`${firstname} of Canterbury`);
+};
+
+const regularPerson = {
+  firstname: "Bill",
+  lastname: "Wilson",
+};
+
+lordify(regularPerson);
