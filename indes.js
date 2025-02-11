@@ -235,6 +235,7 @@ const regularPerson = {
 lordify(regularPerson);
 */
 
+/*
 const lordify = ({ firstname }) => {
   console.log(`${firstname} of Canterbury`);
 };
@@ -245,3 +246,69 @@ const regularPerson = {
 };
 
 lordify(regularPerson);
+*/
+
+/*
+const regularPerson = {
+  firstname: "Bill",
+  lastname: "Wilson",
+  spouse: {
+    firstname: "Phil",
+    lastname: "Wilson",
+  },
+};
+
+const lordify = ({ spouse: { firstname } }) => {
+  console.log(`${firstname} of Canterbury`);
+};
+
+lordify(regularPerson);
+*/
+
+/*
+const [firstAnimal] = ["Horse", "Mouse", "Cat"];
+console.log(firstAnimal);
+*/
+
+/*
+const [, , thirdAnimal] = ["Horse", "Mouse", "Cat"];
+console.log(thirdAnimal);
+*/
+
+/*
+const name = "Tallac";
+const elevation = 9738;
+const funHike = { name, elevation };
+console.log(funHike);
+*/
+
+/*
+const name = "Tallac";
+const elevation = 9738;
+const print = function () {
+  console.log(`Mt. ${this.name} is ${this.elevation} feet tall`);
+};
+
+const funHike = { name, elevation, print };
+funHike.print();
+*/
+
+/*
+const skier = {
+  name,
+  sound,
+  powderYell() {
+    let yell = this.sound.toUpperCase();
+    console.log(`${yell} ${yell} ${yell}!!!`);
+  },
+  speed(mph) {
+    this.speed = mph;
+    console.log("speeed:", mph);
+  },
+};
+*/
+
+const peaks = ["Tallac", "Ralston", "Rose"];
+const canyos = ["Ward", "Blackwood"];
+const tahoe = [...peaks, ...canyos];
+console.log(tahoe.join(", "));
