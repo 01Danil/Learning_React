@@ -432,6 +432,7 @@ const maui = new Vacation("Maui", 7);
 maui.print();
 */
 
+/*
 class Vacation {
   constructor(destination, length) {
     this.destination = destination;
@@ -442,8 +443,8 @@ class Vacation {
   }
 }
 
-// const trip = new Vacation("Santiago, Chile", 7);
-// trip.print();
+const trip = new Vacation("Santiago, Chile", 7);
+trip.print();
 
 class Expedition extends Vacation {
   constructor(destination, length, gear) {
@@ -462,3 +463,35 @@ const tripe = new Expedition("Mt. Whitney", 3, [
 	"camera"
 	]);
 tripe.print();
+*/
+
+/*
+import { print, log } from "./text-helpers";
+import freel from "./mt-freel";
+print("printing a message");
+log("logging a message");
+freel.print();
+*/
+
+/*
+import { print as p, log as l } from "./text-helpers";
+p("printing a message");
+l("logging a message");
+*/
+
+/*
+import * as fns from "./text-helpers";
+*/
+
+/*
+const print(message) => log(message, new Date())
+
+const log(message, timestamp) => console.log(`${timestamp.toString()}: ${message}`)
+
+module.exports = {print, log}
+*/
+
+/*
+const { log, print } = require("./text-helpers");
+*/
+
