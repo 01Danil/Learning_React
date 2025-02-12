@@ -399,6 +399,7 @@ const getFakePerson = async () => {
 getFakePerson();
 */
 
+/*
 const getPeople = (count) =>
   new Promise((resolves, rejects) => {
     const api = `https://api.randomuser.me/?nat=US&results=${count}`;
@@ -415,3 +416,49 @@ const getPeople = (count) =>
 getPeople(5)
   .then((members) => console.log(members))
   .catch((error) => console.error(`getPeople failed: ${error.message}`));
+*/
+
+/*
+function Vacation(destination, length) {
+  this.destination = destination;
+  this.length = length;
+}
+
+Vacation.prototype.print = function () {
+  console.log(this.destination + " | " + this.length + " days");
+};
+
+const maui = new Vacation("Maui", 7);
+maui.print();
+*/
+
+class Vacation {
+  constructor(destination, length) {
+    this.destination = destination;
+    this.length = length;
+  }
+  print() {
+    console.log(`${this.destination} will take ${this.length}`);
+  }
+}
+
+// const trip = new Vacation("Santiago, Chile", 7);
+// trip.print();
+
+class Expedition extends Vacation {
+  constructor(destination, length, gear) {
+    super(destination, length);
+    this.gear = gear;
+  }
+  print() {
+    super.print();
+    console.log(`Bring your ${this.gear.join(" and your ")}`);
+  }
+}
+
+const tripe = new Expedition("Mt. Whitney", 3, [
+	"sunglasses",
+	"prayer flags",
+	"camera"
+	]);
+tripe.print();
