@@ -308,7 +308,110 @@ const skier = {
 };
 */
 
+/*
 const peaks = ["Tallac", "Ralston", "Rose"];
 const canyos = ["Ward", "Blackwood"];
 const tahoe = [...peaks, ...canyos];
 console.log(tahoe.join(", "));
+*/
+
+/*
+const peaks = ["Tallac", "Ralston", "Rose"];
+const [last] = peaks.reverse();
+
+console.log(last);
+console.log(peaks.join(", "));
+*/
+
+/*
+const peaks = ["Tallac", "Ralston", "Rose"];
+const [last] = [...peaks].reverse();
+
+console.log(last);
+console.log(peaks.join(", "));
+*/
+
+/*
+const lakes = ["Donner", "Marlette", "Fallen Leaf", "Cascade"];
+const [first, ...others] = lakes;
+console.log(others.join(", "));
+*/
+
+/*
+function directions(...args) {
+  let [start, ...remaining] = args;
+  let [finish, ...stops] = remaining.reverse();
+
+  console.log(`drive through ${args.length} towns`);
+  console.log(`start in ${start}`);
+  console.log(`the destination is ${finish}`);
+  console.log(`stopping ${stops.length} times in between`);
+}
+
+directions("Truckee", "Tahoe City", "Sunnyside", "Homewood", "Tahoma");
+*/
+
+/*
+const morning = {
+  breakfast: "oatmeal",
+  lunch: "peanut butter and jelly",
+};
+
+const dinner = "mac and cheese";
+const backpackingMeals = {
+  ...morning,
+  dinner,
+};
+
+console.log(backpackingMeals);
+*/
+
+/*
+const header = document.getElementById("heading");
+header.innerHTML = "Hey!";
+*/
+
+/*
+fetch("https://api.randomuser.me/?nat=US&results=1").then((res) =>
+  console.log(res.join)
+);
+*/
+
+/*
+const getFakePerson = async () => {
+  let res = await fetch("https://api.randomuser.me/?nat=US&results=1");
+  let { results } = res.json();
+  console.log(results);
+};
+getFakePerson();
+*/
+
+/*
+const getFakePerson = async () => {
+  try {
+    let res = await fetch("https://api.randomuser.me/?nat=US&results=1");
+    let { results } = res.json();
+    console.log(results);
+  } catch (error) {
+    console.error(error);
+  }
+};
+getFakePerson();
+*/
+
+const getPeople = (count) =>
+  new Promise((resolves, rejects) => {
+    const api = `https://api.randomuser.me/?nat=US&results=${count}`;
+    const request = new XMLHttpRequest();
+    request.open("GET", api);
+    request.onload = () =>
+      request.status === 200
+        ? resolves(JSON.parse(request.response).results)
+        : rejects(Error(request.statusText));
+    request.onerror = (err) => rejects(err);
+    request.send();
+  });
+
+getPeople(5)
+  .then((members) => console.log(members))
+  .catch((error) => console.error(`getPeople failed: ${error.message}`));
