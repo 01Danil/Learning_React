@@ -495,3 +495,49 @@ module.exports = {print, log}
 const { log, print } = require("./text-helpers");
 */
 
+/*
+var log = function (message) {
+  console.log(message);
+};
+log("In JavaScript, funcrion are variables");
+*/
+
+/*
+const log = (message) => console.log("message");
+const obj = {
+  message: "They can be added to object like variebles",
+  log(message) {
+    console.log(message);
+  },
+};
+obj.log(obj.message);
+*/
+
+/*
+const message = [
+  "They can be inserted into arrays",
+  (message) => console.log(message),
+  "like veriables",
+  (message) => console.log(message),
+];
+message[1](message[0]);
+message[3](message[2]);
+*/
+
+/*
+const insideFn = (logger) => {
+  logger("They can be sent to other funcrion as arguments");
+};
+insideFn((message) => console.log(message));
+*/
+
+const createScream = function (logger) {
+  return function (message) {
+    logger(message.toUpperCase() + "!!!");
+  };
+};
+const scream = createScream((message) => console.log(message));
+
+scream("functions can be returned from other functions");
+scream("createScream returns a function");
+scream("scream invoker that returned gunction");
