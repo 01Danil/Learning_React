@@ -531,13 +531,59 @@ const insideFn = (logger) => {
 insideFn((message) => console.log(message));
 */
 
+/*
 const createScream = function (logger) {
   return function (message) {
     logger(message.toUpperCase() + "!!!");
   };
+};
+
+const scream = createScream((message) => console.log(message));
+
+scream("functions can be returned from other functions");
+scream("createScream returns a function");
+scream("scream invoker that returned gunction");
+*/
+
+/*
+const createScream = (logger) => (message) => {
+  logger(message.toUpperCase() + "!!!");
 };
 const scream = createScream((message) => console.log(message));
 
 scream("functions can be returned from other functions");
 scream("createScream returns a function");
 scream("scream invoker that returned gunction");
+*/
+
+/*
+const string = "Restaurants in Hanalei";
+const urlFriendly = "";
+for (var i = 0; i < string.length; i++) {
+  if (string[i] === " ") {
+    urlFriendly += "-";
+  } else {
+    urlFriendly += string[i];
+  }
+}
+console.log(urlFriendly);
+*/
+
+/*
+const string = "Restaurant in Hanalei";
+const urlFriendly = string.replace(/ /g, "-");
+console.log(urlFriendly);
+*/
+
+const loadAndMapMembers = compose(
+  combineWith(sessionStorage, "members"),
+  save(sessionStorage, "members"),
+  scopeMembers(window),
+  logMemberInfoToConsole,
+  logFieldsToConsole("name.first"),
+  countMembersBy("location.state"),
+  prepStatesForMapping,
+  save(sessionStorage, "map"),
+  renderUSMap
+);
+getFakeMembers(100).then(loadAndMapMembers);
